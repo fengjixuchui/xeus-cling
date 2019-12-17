@@ -13,7 +13,7 @@ the native implementation of the Jupyter protocol [xeus](https://github.com/Quan
 
 xeus-cling has been packaged for the conda package manager on the **Linux** and **OS X** platforms. At the moment, we are not providing packages for the **Windows** platform.
 
-To ensure that the installation works, it is preferable to install `xeus-cling` in a fresh conda environment. It is also needed to use a [miniconda](https://conda.io/miniconda.html) installation because with the full [anaconda](https://www.anaconda.com/) you may have a conflict with the `zeromq` library which is already installed in the anaconda distribution.
+To ensure that the installation works, it is preferable to install `xeus-cling` in a fresh conda environment. It is also needed to use a [miniconda](https://conda.io/miniconda.html) installation because with the full [anaconda](https://www.anaconda.com/) you may have a conflict with the `ZeroMQ` library which is already installed in the anaconda distribution.
 
 
 The safest usage is to create an environment named `cling` with your miniconda installation
@@ -98,21 +98,12 @@ A C++ backend for the Jupyter interactive widgets is available in the [`xwidgets
 |  0.6.0       |  >=0.20.0,<0.21 |  >=0.6.1,<0.7   | >=0.5,<0.6    | ~1.8.1        | ~4.3.0   | >=2.1.1,<=3.0 | >=3.3.0,<4.0    | >=2.3.2,<3              |
 |  0.5.1       |  >=0.19.1,<0.20 |  >=0.6.1,<0.7   | >=0.5,<0.6    | ~1.8.1        | ~4.3.0   | >=2.1.1,<=3.0 | >=3.3.0,<4.0    | >=2.3.2,<3              |
 |  0.5.0       |  >=0.19.1,<0.20 |  >=0.6.1,<0.7   | >=0.5,<0.6    | ~1.8.1        | ~4.3.0   | >=2.1.1,<=3.0 | >=3.3.0,<4.0    | >=2.3.2,<3              |
-|  0.4.12      |  >=0.19.1,<0.20 |  >=0.6.1,<0.7   | >=0.5,<0.6    | ~1.8.1        | ~4.3.0   | >=2.1.1,<=3.0 | >=3.3.0,<4.0    | >=2.3.2,<3              |
-|  0.4.11      |  >=0.18.1,<0.19 |  >=0.5.2,<0.6   | >=0.5,<0.6    | ~1.8.1        | ~4.3.0   | >=2.1.1,<=3.0 | >=3.3.0,<4.0    | >=2.3.2,<3              |
-|  0.4.10      |  >=0.18.1,<0.19 |  >=0.5.2,<0.6   | >=0.5,<0.6    | ~1.8.1        | ~4.3.0   | >=2.1.1,<=3.0 | >=3.3.0,<4.0    | >=2.3.2,<3              |
-|  0.4.9       |  >=0.17.0,<0.18 |  >=0.5.1,<0.6   | >=0.5,<0.6    | ~1.8.1        | ~4.3.0   | >=2.1.1,<=3.0 | >=3.3.0,<4.0    | >=2.3.2,<3              |
-|  0.4.8       |  >=0.15.0,<0.16 |  >=0.4.0,<0.5   | >=0.5,<0.6    | ~1.8.1        | ~4.3.0   | >=2.1.1,<=3.0 | >=3.3.0,<4.0    | >=2.3.2,<3              |
-|  0.4.7       |  >=0.14.1,<0.15 |  >=0.4.0,<0.5   | >=0.5,<0.6    | ~1.8.1        | ~4.3.0   | >=2.1.1,<=3.0 | >=3.1.2,<4.0    | >=2.3.2,<3              |
-|  0.4.6       |  >=0.13.0,<0.14 |  >=0.4.0,<0.5   | >=0.5,<0.6    | ~1.8.1        | ~4.2.3   | >=2.1.1,<=3.0 | >=3.1.0,<4.0    | >=2.3.2,<3              |
-|  0.4.5       |  >=0.13.0,<0.14 |  >=0.4.0,<0.5   | >=0.5,<0.6    | ~1.8.1        | ~4.2.3   | >=2.1.0,<=3.0 | >=3.1.0,<4.0    | >=2.3.2,<3              |
-|  0.4.4       |  >=0.12.0,<0.13 |  >=0.4.0,<0.5   | >=0.5,<0.6    | ~1.8.1        | ~4.2.3   | >=2.1.0,<=3.0 | >=3.1.0,<4.0    | >=2.3.2,<3              |
-|  0.4.3       |  >=0.12.0,<0.13 |  >=0.4.0,<0.5   | >=0.5,<0.6    | ~1.8.1        | ~4.2.3   | >=1.4.1,<=2.0 | >=3.1.0,<4.0    | >=2.3.2,<3              |
-|  0.4.2       |  >=0.12.0,<0.13 |  >=0.4.0,<0.5   | >=0.5,<0.6    | ~1.8.1        | ~4.2.3   | >=1.4.1,<=2.0 | >=3.1.0,<4.0    | >=2.3.2,<3              |
-|  0.4.1       |  >=0.12.0,<0.13 |  >=0.4.0,<0.5   | >=0.5,<0.6    | ~1.8.1        | ~4.2.3   | >=1.4.1,<=2.0 | >=3.1.0,<4.0    | >=2.3.2,<3              |
-|  0.4.0       |  >=0.12.0,<0.13 |  >=0.4.0,<0.5   | >=0.5,<0.6    | ~1.8.1        | ~4.2.3   | >=1.4.1,<=2.0 | >=3.1.0,<4.0    | >=2.3.2,<3              |
 
 `xeus-cling` requires its dependencies to be built with the same compiler and same C runtime as the one used to build `cling`.
+
+## Contributing
+
+See [CONTRIBUTING.md](./CONTRIBUTING.md) to know how to contribute and set up a development environment.
 
 ## License
 
