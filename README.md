@@ -1,13 +1,13 @@
 # ![xeus-cling](docs/source/xeus-cling.svg)
 
-[![Travis](https://travis-ci.org/QuantStack/xeus-cling.svg?branch=master)](https://travis-ci.org/QuantStack/xeus-cling)
-[![Appveyor](https://ci.appveyor.com/api/projects/status/jh45g5pj44jqj8vw?svg=true)](https://ci.appveyor.com/project/QuantStack/xeus-cling)
+[![Travis](https://travis-ci.org/jupyter-xeus/xeus-cling.svg?branch=master)](https://travis-ci.org/jupyter-xeus/xeus-cling)
+[![Appveyor](https://ci.appveyor.com/api/projects/status/qn0wskxlvy52utuv?svg=true)](https://ci.appveyor.com/project/jupyter-xeus/xeus-cling)
 [![Documentation Status](http://readthedocs.org/projects/xeus-cling/badge/?version=latest)](https://xeus-cling.readthedocs.io/en/latest/?badge=latest)
-[![Binder](https://img.shields.io/badge/launch-binder-brightgreen.svg)](https://mybinder.org/v2/gh/QuantStack/xeus-cling/stable?filepath=notebooks/xcpp.ipynb)
+[![Binder](https://img.shields.io/badge/launch-binder-brightgreen.svg)](https://mybinder.org/v2/gh/jupyter-xeus/xeus-cling/stable?filepath=notebooks/xcpp.ipynb)
 [![Join the Gitter Chat](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/QuantStack/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 `xeus-cling` is a Jupyter kernel for C++ based on the C++ interpreter [cling](https://github.com/root-project/cling) and
-the native implementation of the Jupyter protocol [xeus](https://github.com/QuantStack/xeus).
+the native implementation of the Jupyter protocol [xeus](https://github.com/jupyter-xeus/xeus).
 
 ## Installation
 
@@ -41,7 +41,7 @@ make && make install
 To try out xeus-cling interactively in your web browser, just click on the binder
 link:
 
-[![Binder](binder-logo.svg)](https://mybinder.org/v2/gh/QuantStack/xeus-cling/stable?filepath=notebooks/xcpp.ipynb)
+[![Binder](binder-logo.svg)](https://mybinder.org/v2/gh/jupyter-xeus/xeus-cling/stable?filepath=notebooks/xcpp.ipynb)
 
 ## Documentation
 
@@ -65,7 +65,7 @@ Quick help is shown on the pager with the special `?` magic.
 
 ![Help](help.png)
 
-Content for the quick help is available for the standard library and the QuantStack packages.
+Content for the quick help is available for the standard library, and can be made available for third-party packages.
 
 ### Rendering of rich outputs
 
@@ -81,8 +81,8 @@ A C++ backend for the Jupyter interactive widgets is available in the [`xwidgets
 
 ``xeus-cling`` depends on
 
- - [xeus](https://github.com/QuantStack/xeus)
- - [xtl](https://github.com/QuantStack/xtl)
+ - [xeus](https://github.com/jupyter-xeus/xeus)
+ - [xtl](https://github.com/xtensor-stack/xtl)
  - [cling](https://github.com/root-project/cling)
  - [pugixml](https://github.com/zeux/pugixml)
  - [cxxopts](https://github.com/jarro2783/cxxopts)
@@ -92,6 +92,7 @@ A C++ backend for the Jupyter interactive widgets is available in the [`xwidgets
 | `xeus-cling` |   `xeus`        |      `xtl`      |     `cling`   |   `pugixml`   | `cppzmq` | `cxxopts`     | `nlohmann_json` | `dirent` (windows only) |
 |--------------|-----------------|-----------------|---------------|---------------|----------|---------------|-----------------|-------------------------|
 |  master      |  >=0.23.2,<0.24 |  >=0.6.5,<0.7   | >=0.6,<0.7    | ~1.8.1        | ~4.3.0   | >=2.1.1,<=3.0 | >=3.6.1,<4.0    | >=2.3.2,<3              |
+|  0.8.1       |  >=0.23.2,<0.24 |  >=0.6.5,<0.7   | >=0.6,<0.7    | ~1.8.1        | ~4.3.0   | >=2.1.1,<=3.0 | >=3.6.1,<4.0    | >=2.3.2,<3              |
 |  0.8.0       |  >=0.23.2,<0.24 |  >=0.6.5,<0.7   | >=0.6,<0.7    | ~1.8.1        | ~4.3.0   | >=2.1.1,<=3.0 | >=3.6.1,<4.0    | >=2.3.2,<3              |
 |  0.7.1       |  >=0.21.1,<0.22 |  >=0.6.5,<0.7   | >=0.5,<0.6    | ~1.8.1        | ~4.3.0   | >=2.1.1,<=3.0 | >=3.6.1,<4.0    | >=2.3.2,<3              |
 |  0.7.0       |  >=0.21.1,<0.22 |  >=0.6.5,<0.7   | >=0.5,<0.6    | ~1.8.1        | ~4.3.0   | >=2.1.1,<=3.0 | >=3.6.1,<4.0    | >=2.3.2,<3              |

@@ -1,10 +1,11 @@
-/***************************************************************************
-* Copyright (c) 2016, Johan Mabille, Loic Gouarin and Sylvain Corlay       *
-*                                                                          *
-* Distributed under the terms of the BSD 3-Clause License.                 *
-*                                                                          *
-* The full license is in the file LICENSE, distributed with this software. *
-****************************************************************************/
+/***********************************************************************************
+* Copyright (c) 2016, Johan Mabille, Loic Gouarin, Sylvain Corlay, Wolf Vollprecht *
+* Copyright (c) 2016, QuantStack                                                   *
+*                                                                                  *
+* Distributed under the terms of the BSD 3-Clause License.                         *
+*                                                                                  *
+* The full license is in the file LICENSE, distributed with this software.         *
+************************************************************************************/
 
 #include <algorithm>
 #include <memory>
@@ -53,7 +54,10 @@ namespace xcpp
         init_magic();
     }
 
-    interpreter::~interpreter() {}
+    interpreter::~interpreter()
+    {
+        restore_output();
+    }
 
     nl::json interpreter::execute_request_impl(int execution_counter,
                                                const std::string& code,

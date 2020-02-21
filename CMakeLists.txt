@@ -1,10 +1,11 @@
-############################################################################
-# Copyright (c) 2016, Johan Mabille, Loic Gouarin and Sylvain Corlay       #
-#                                                                          #
-# Distributed under the terms of the BSD 3-Clause License.                 #
-#                                                                          #
-# The full license is in the file LICENSE, distributed with this software. #
-############################################################################
+####################################################################################
+# Copyright (c) 2016, Johan Mabille, Loic Gouarin, Sylvain Corlay, Wolf Vollprecht #
+# Copyright (c) 2016, QuantStack                                                   #
+#                                                                                  #
+# Distributed under the terms of the BSD 3-Clause License.                         #
+#                                                                                  #
+# The full license is in the file LICENSE, distributed with this software.         #
+####################################################################################
 
 cmake_minimum_required(VERSION 3.4.3)
 project(xeus-cling)
@@ -334,6 +335,21 @@ if(MSVC)
 
     set_property(TARGET xeus-cling APPEND_STRING PROPERTY LINK_FLAGS ${cling_link_str})
 endif(MSVC)
+
+#########
+# Tests #
+#########
+
+OPTION(BUILD_TESTS "xeus-cling test suite" OFF)
+OPTION(DOWNLOAD_GTEST "build gtest from downloaded sources" OFF)
+
+if(DOWNLOAD_GTEST OR GTEST_SRC_DIR)
+    set(BUILD_TESTS ON)
+endif()
+
+if(BUILD_TESTS)
+    add_subdirectory(test)
+endif()
 
 ################
 # Installation #

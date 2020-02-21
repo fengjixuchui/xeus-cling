@@ -7,20 +7,10 @@
 * The full license is in the file LICENSE, distributed with this software.         *
 ************************************************************************************/
 
-#ifndef XCPP_OPTIONS_HPP
-#define XCPP_OPTIONS_HPP
+#include <gtest/gtest.h>
 
-#include <string>
-
-#include "cxxopts.hpp"
-
-namespace xcpp
+int main(int argc, char* argv[])
 {
-    struct xoptions : public cxxopts::Options
-    {
-        using parent = cxxopts::Options;
-        using parent::Options;
-        cxxopts::ParseResult parse(const std::string& line);
-    };
+    ::testing::InitGoogleTest(&argc, argv);
+    return RUN_ALL_TESTS();
 }
-#endif
