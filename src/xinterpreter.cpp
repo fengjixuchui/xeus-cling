@@ -23,6 +23,7 @@
 
 #include "xinput.hpp"
 #include "xinspect.hpp"
+#include "xmagics/executable.hpp"
 #include "xmagics/execution.hpp"
 #include "xmagics/os.hpp"
 #include "xmime_internal.hpp"
@@ -311,7 +312,8 @@ namespace xcpp
 
     static std::string c_format(const char* format, std::va_list args)
     {
-        // Call vsnprintf once to determine the required buffer length.
+        // Call vsnprintf once to determine the required buffer length. The
+        // return value is the number of characters _excluding_ the null byte.
         std::va_list args_bufsz;
         va_copy(args_bufsz, args);
         size_t bufsz = vsnprintf(NULL, 0, format, args_bufsz);
@@ -323,7 +325,9 @@ namespace xcpp
         // Now format the data into this string and return it.
         std::va_list args_format;
         va_copy(args_format, args);
-        vsnprintf(&s[0], s.size(), format, args_format);
+        // The second parameter is the maximum number of bytes that vsnprintf
+        // will write _including_ the  terminating null byte.
+        vsnprintf(&s[0], s.size() + 1, format, args_format);
         va_end(args_format);
 
         return s;
@@ -414,6 +418,7 @@ namespace xcpp
 
     void interpreter::init_magic()
     {
+        preamble_manager["magics"].get_cast<xmagics_manager>().register_magic("executable", executable(m_cling));
         preamble_manager["magics"].get_cast<xmagics_manager>().register_magic("file", writefile());
         preamble_manager["magics"].get_cast<xmagics_manager>().register_magic("timeit", timeit(&m_processor));
     }
